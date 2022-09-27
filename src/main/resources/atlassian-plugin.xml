@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2"> 
+  <plugin-info> 
+    <description>${project.description}</description>  
+    <version>${project.version}</version>  
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
+    <param name="plugin-icon">images/pluginIcon.png</param>  
+    <param name="plugin-logo">images/pluginLogo.png</param> 
+  </plugin-info>  
+  <!-- add our i18n resource -->  
+  <resource type="i18n" name="i18n" location="TestPmo2"/>  
+  <!-- add our web resources -->  
+  <web-resource key="TestPmo2-resources" name="TestPmo2 Web Resources"> 
+    <dependency>com.atlassian.auiplugin:ajs</dependency>  
+    <resource type="download" name="TestPmo2.css" location="/css/TestPmo2.css"/>  
+    <resource type="download" name="TestPmo2.js" location="/js/TestPmo2.js"/>  
+    <resource type="download" name="images/" location="/images"/>  
+    <context>TestPmo2</context> 
+  </web-resource>  
+  <servlet name="Test 1" i18n-name-key="test-1.name" key="test-1" class="com.pmo.test.servlet.Test1"> 
+    <description key="test-1.description">The Test 1 Plugin</description>  
+    <url-pattern>/test3</url-pattern>
+  </servlet>  
+<!--  <component-import key="I18nResolver" interface="com.atlassian.sal.api.message.I18nResolver" filter=""/>  -->
+<!--  <component-import key="velocityTemplateRenderer" interface="com.atlassian.templaterenderer.velocity.one.six.VelocityTemplateRenderer" filter=""/>-->
+</atlassian-plugin>
